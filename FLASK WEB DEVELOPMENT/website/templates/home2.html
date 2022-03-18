@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+  
+<button onclick="getLocation()">get location</button>
+<br>
+<script>
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  }
+}
+
+function showPosition(position) {
+  document.getElementById("lat").value=position.coords.latitude;
+  document.getElementById("lon").value=position.coords.longitude;
+}
+</script>
+
+  <form method="POST">
+    <div class="form-group">
+      <label for="location">latitude :</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lat"
+        name="lat"
+      />
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="location">longitude :</label>
+      <input
+        type="text" 
+        class="form-control"
+        id="lon"
+        name="lon"
+      />
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Search Mechanic</button>
+  </form>
+
+
+
+</body>
+</html>
+
